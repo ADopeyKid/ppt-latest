@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "launch": "node src/launch.js",
+    "launch:mobile":"node src/launch.js -m",
     "run": "node src/index.js",
-    "kill": "node src/killBrowser.js"
+    "kill": "node src/killBrowser.js",
+    "incognito":"node src/incognito.js",
+    "mobile":"node src/fakeMobile.js"
   },
   "keywords": [],
   "author": "",

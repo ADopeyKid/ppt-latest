@@ -12,7 +12,9 @@ const writeFile=(path,data,flag)=>new Promise((resolve,reject)=>{
 
     });
 });
+
 const coverFile=(path,data)=>writeFile(path,data,"w+");
+
 const readFile=(path,{flag= 'r+', encoding= 'utf8'}={})=>new Promise((resolve,reject)=>{
     fs.readFile(path, {flag, encoding}, function (err, data) {
         if(err) {
@@ -23,13 +25,15 @@ const readFile=(path,{flag= 'r+', encoding= 'utf8'}={})=>new Promise((resolve,re
         resolve(data);
     });
 });
-const sleep=(time)=>new Promise(resolve => {
-    setTimeout(resolve,time)
-});
+
+const errorLogNExit=e=>{
+    console.log(e);
+    process.exit();
+};
 
 module.exports={
     writeFile,
     coverFile,
     readFile,
-    sleep
+    errorLogNExit,
 };
